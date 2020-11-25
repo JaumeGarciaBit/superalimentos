@@ -1,0 +1,45 @@
+<div class="main">
+  <div>
+    <label for="search">Search
+      <input type="text" #search [(ngModel)]="filter">
+    </label>
+    <br><br>
+    <button *ngIf='!showAddFood' #addFoodButton (click)='toggleForm()'>Add Food</button>
+    <form *ngIf='showAddFood' #form01 = 'ngForm' (ngSubmit) ='addFoodSubmit(foodname.value,foodCalories.value, foodImage.value)'>
+        <label for='foodname'>name
+          <input type="text"  #foodname>
+        </label>
+        <label for='foodCalories'>calories
+          <input type='number' min="0" #foodCalories>
+        </label>
+        <label for ='foodImage'>ImageUrl
+          <input type="text" #foodImage>
+        </label>
+        <span>
+          <button (click)='toggleForm()'>Cancelar</button>
+          <button type='submit' #sendButton>Aceptar</button>
+        </span>
+    </form>
+    <div class="post" *ngFor="let element of food | nameFilter : filter">
+      <img src="{{element.image}}" alt="{{element.name}}">
+      <div>
+        <p>{{element.name}}</p>
+        <span>
+          <Button (click)="calorieClick(element, foodInput.value)">+</Button>
+          <input valueAsNumer #foodInput type="number" min="0" value="1" id="{{element.name}}Input">
+        </span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <header>
+      <span>
+        <h2>Today's Foods {{totalCalories}} cal</h2>
+        <ul>
+          <li *ngFor='let e of totalfood'>{{e.name}} <span *ngIf='e.quantity>1'> x{{e.quantity}}</span></li>
+        </ul>
+      </span>
+    </header>
+  </div>
+</div>
+

@@ -1,4 +1,4 @@
-const foods: Object[] = [
+export const foods: Object[] = [
     {
       name: "Pizza",
       calories: 400,
@@ -96,6 +96,5 @@ const foods: Object[] = [
       quantity: 0
     }
   ]
-  
+
   export default foods;
-  

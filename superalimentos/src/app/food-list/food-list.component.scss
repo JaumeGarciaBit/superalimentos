@@ -1,0 +1,60 @@
+.main
+{
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  width: 100%;
+  >div:first-child
+  {
+
+    text-align: center;
+  }
+}
+
+header
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 500px;
+}
+
+form
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 500px;
+
+  >*
+  {
+    margin-bottom: 10px;
+  }
+}
+.post
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 500px;
+  height: fit-content;
+
+  margin: 20px;
+
+  >img
+  {
+    width: 200px;
+    height: 200px;
+
+    border-radius: 50%;
+  }
+}
